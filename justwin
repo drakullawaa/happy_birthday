@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAPPY BIRTHDAY CHOTI HAMSHIRA!!</title>
+    <style>
+        body {
+            background-color: black;
+            color: orange;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 3em;
+            margin-top: 20px;
+        }
+        p {
+            font-size: 1.5em;
+            margin: 20px;
+        }
+        .balloon {
+            position: absolute;
+            width: 50px;
+            height: 70px;
+            background-color: yellow;
+            border-radius: 50%;
+            animation: float 5s infinite ease-in-out;
+        }
+        @keyframes float {
+            0% { transform: translateY(100vh); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-10vh); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <h1>HAPPY BIRTHDAY CHOTI HAMSHIRA!! 🎉🎂</h1>
+    <p>Thank you for being my best friend, the best sister, the best dosth! ❤️ Thanks a lot for helping me in every situation maa... You are literally the best! 🥰 Wish you a happy birthday, Nimuuuu! 🎈🎁</p>
+    
+    <script>
+        function createBalloon() {
+            const balloon = document.createElement("div");
+            balloon.classList.add("balloon");
+            balloon.style.left = Math.random() * 100 + "vw";
+            balloon.style.animationDuration = Math.random() * 3 + 4 + "s";
+            document.body.appendChild(balloon);
+            setTimeout(() => {
+                balloon.remove();
+            }, 5000);
+        }
+        setInterval(createBalloon, 500);
+    </script>
+</body>
+</html>
