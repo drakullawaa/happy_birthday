@@ -32,28 +32,13 @@
             text-shadow: 2px 2px 5px rgba(255, 136, 0, 0.7);
             animation: fadeIn 2s ease-in-out;
         }
-        button {
-            background-color: #ff4d4d;
-            color: white;
-            font-size: 1.2em;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 20px;
-            transition: 0.3s;
-        }
-        button:hover {
-            background-color: #ff8800;
-        }
         .flower {
             position: absolute;
-            width: 50px;
-            height: 50px;
-            background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/ec/Snickers-broken.png'); /* Snickers Image */
-            background-size: contain;
-            background-repeat: no-repeat;
-            animation: fall 3s linear forwards;
+            width: 30px;
+            height: 30px;
+            background-image: url('https://i.imgur.com/3Owa8Gm.png');
+            background-size: cover;
+            animation: fall 5s linear infinite;
         }
         @keyframes fadeIn {
             from { opacity: 0; }
@@ -69,13 +54,9 @@
     <h1>HAPPY BIRTHDAY CHOTI HAMSHIRA!! 🎉🎂</h1>
     <p>Thank you for being my best friend, the best sister, the best dosth! ❤️ Thanks a lot for helping me in every situation maa... You are literally the best! 🥰 Wish you a happy birthday, Nimuuuu! 🎈🎁</p>
     
-    <button onclick="startFlowers()">Click Here</button>
-    
     <script>
         function startFlowers() {
-            for (let i = 0; i < 50; i++) {
-                setTimeout(createFlower, i * 100);
-            }
+            setInterval(createFlower, 300);
         }
         function createFlower() {
             const flower = document.createElement("div");
@@ -85,8 +66,11 @@
             document.body.appendChild(flower);
             setTimeout(() => {
                 flower.remove();
-            }, 3000);
+            }, 5000);
         }
+        
+        window.onload = startFlowers;
     </script>
-</
+</body>
+</html>
 
