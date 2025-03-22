@@ -6,8 +6,8 @@
     <title>HAPPY BIRTHDAY CHOTI HAMSHIRA!!</title>
     <style>
         body {
-            background: linear-gradient(135deg, #000000, #1e1e1e);
-            color: #ffcc00;
+            background: linear-gradient(135deg, #fff5e1, #ffd5d5);
+            color: #ff4d4d;
             text-align: center;
             font-family: 'Poppins', sans-serif;
             margin: 0;
@@ -21,41 +21,46 @@
         h1 {
             font-size: 4em;
             margin: 20px 0;
-            color: #ff4444;
-            text-shadow: 4px 4px 10px rgba(255, 68, 68, 0.8);
+            color: #ff4d4d;
+            text-shadow: 4px 4px 10px rgba(255, 77, 77, 0.8);
             animation: glitch 1.5s infinite;
         }
         p {
             font-size: 1.5em;
             margin: 20px;
-            color: #ffcc00;
-            text-shadow: 2px 2px 5px rgba(255, 204, 0, 0.7);
+            color: #ff8800;
+            text-shadow: 2px 2px 5px rgba(255, 136, 0, 0.7);
             animation: fadeIn 2s ease-in-out;
         }
-        .balloon {
+        button {
+            background-color: #ff4d4d;
+            color: white;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #ff8800;
+        }
+        .flower {
             position: absolute;
-            width: 50px;
-            height: 70px;
-            background-color: #ffcc00;
-            border-radius: 50%;
-            animation: float 5s infinite ease-in-out;
+            width: 30px;
+            height: 30px;
+            background-image: url('https://i.imgur.com/3Owa8Gm.png');
+            background-size: cover;
+            animation: fall 3s linear forwards;
         }
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-        @keyframes float {
-            0% { transform: translateY(100vh); opacity: 0; }
-            50% { opacity: 1; }
-            100% { transform: translateY(-10vh); opacity: 0; }
-        }
-        @keyframes glitch {
-            0% { text-shadow: 2px 2px 5px rgba(255, 68, 68, 0.8); }
-            20% { text-shadow: -2px -2px 5px rgba(255, 68, 68, 0.8); }
-            40% { text-shadow: 4px -2px 10px rgba(255, 68, 68, 0.8); }
-            60% { text-shadow: -4px 2px 10px rgba(255, 68, 68, 0.8); }
-            80% { text-shadow: 2px -2px 10px rgba(255, 68, 68, 0.8); }
-            100% { text-shadow: -2px 4px 10px rgba(255, 68, 68, 0.8); }
+        @keyframes fall {
+            0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
         }
     </style>
 </head>
@@ -63,18 +68,24 @@
     <h1>HAPPY BIRTHDAY CHOTI HAMSHIRA!! 🎉🎂</h1>
     <p>Thank you for being my best friend, the best sister, the best dosth! ❤️ Thanks a lot for helping me in every situation maa... You are literally the best! 🥰 Wish you a happy birthday, Nimuuuu! 🎈🎁</p>
     
+    <button onclick="startFlowers()">Click Here</button>
+    
     <script>
-        function createBalloon() {
-            const balloon = document.createElement("div");
-            balloon.classList.add("balloon");
-            balloon.style.left = Math.random() * 100 + "vw";
-            balloon.style.animationDuration = Math.random() * 3 + 4 + "s";
-            document.body.appendChild(balloon);
-            setTimeout(() => {
-                balloon.remove();
-            }, 5000);
+        function startFlowers() {
+            for (let i = 0; i < 50; i++) {
+                setTimeout(createFlower, i * 100);
+            }
         }
-        setInterval(createBalloon, 500);
+        function createFlower() {
+            const flower = document.createElement("div");
+            flower.classList.add("flower");
+            flower.style.left = Math.random() * 100 + "vw";
+            flower.style.animationDuration = Math.random() * 3 + 2 + "s";
+            document.body.appendChild(flower);
+            setTimeout(() => {
+                flower.remove();
+            }, 3000);
+        }
     </script>
 </body>
 </html>
